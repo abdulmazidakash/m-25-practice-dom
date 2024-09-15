@@ -9,23 +9,62 @@
 		h1{
 			color: red;
 		}
-		li{
+		#fruits-container li{
 			color: tomato;
+		}
+		#fruits-title{
+			color: black;
+		}
+
+		.important-places{
+			color: blueviolet;
+		}
+
+		.large-text{
+			font-size: 2em;
+		}
+
+		.text-center{
+			text-align: center;
 		}
 	</style>
 </head>
 <body>
 	<header>
 		<h1>Welcome to my dom</h1>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt atque incidunt consectetur nihil non aliquam ullam vitae, delectus esse, soluta illo laudantium. Quibusdam deserunt voluptatibus placeat, itaque quis reiciendis porro.</p>
 	</header>
 	<main>
-		<h1>My awesome dom de baba</h1>
-		<ul>
-			<li>jalali set</li>
-			<li>jalali set</li>
-			<li>jalali set</li>
-			<li>jalali set</li>
-		</ul>
+
+		<section>
+			<h1>My awesome dom de baba</h1>
+			<ul>
+				<li>jalali set1</li>
+				<li>jalali set2</li>
+				<li>jalali set3</li>
+				<li>jalali set4</li>
+			</ul>
+		</section>
+
+		<section class="fruits-container">
+			<h1 id="fruits-title" class="some-class random-class blue-bg">Fruits i like</h1>
+			<ul>
+				<li>Apple</li>
+				<li>Mango</li>
+				<li>Carrot</li>
+				<li>Banana</li>
+			</ul>
+		</section>
+
+		<section id="places-container" class="large-text">
+			<h1 id="places-title">Places i like to visit</h1>
+			<ul>
+				<li class="important-places">sondorbon</li>
+				<li class="important-places">bandorbbon</li>
+				<li class="important-places">katabon</li>
+				<li>shalbon</li>
+			</ul>
+		</section>
 	</main>
 
 	<script src="js/dom.js"></script>
