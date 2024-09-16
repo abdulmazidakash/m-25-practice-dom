@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Github delete button</title>
+</head>
+<body>
+	<h1 id="secret-info">My Secret Info</h1>
+	<input type="text" name="" id="delete-confirm" placeholder="please type delete">
+	<button id="btn-delete" disabled>Delete</button>
+
+	<h1 id="private-info">My Private Info</h1>
+	<input type="text" name="" id="delete-confirm1">
+	<button id="btn-delete1" style="background-color: aqua; color: black; font-size: 18px;" disabled>Delete</button>
+
+
+	
+	<script>
+		document.getElementById('btn-delete').addEventListener('click', function(){
+			const secret = document.getElementById('secret-info');
+			secret.style.display = 'none'
+		});
+
+		document.getElementById('delete-confirm').addEventListener('keyup', function(event){
+			const text = event.target.value;
+			const deleteButton = document.getElementById('btn-delete');
+			if (text === 'delete'){
+				deleteButton.removeAttribute('disabled');
+			}
+			else{
+				deleteButton.setAttribute('disabled', true)
+			}
+		})
+
+		//second time practice 
+		document.getElementById('btn-delete1').addEventListener('click', function(){
+			const private = document.getElementById('private-info');
+			private.style.display = 'none';
+		})
+
+		document.getElementById('delete-confirm1').addEventListener('keyup', function(event){
+			const text1 = event.target.value;
+			// console.log(text1)
+			const deleteButton1 = document.getElementById('btn-delete1');
+			// console.log(deleteButton1);
+
+			if (text1 === 'delete'){
+				deleteButton1.removeAttribute('disabled');
+			}else{
+				deleteButton1.setAttribute('disabled', true)
+			}
+		})
+	</script>
+</body>
+</html>

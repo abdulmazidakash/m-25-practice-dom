@@ -35,6 +35,8 @@
 		<button id="btn-post1" style="background-color: teal; padding: 10px; color: white; font-size: 18px; margin-top: 10px; border-radius: 10px;">Comment Post</button>
 	</div>
 
+	<button id="make-teal" style="background-color: crimson; padding: 10px; color: white; font-size: 18px; margin-top: 10px; border-radius: 10px;">make Teal</button>
+
 	<script>
 		//step -1:
 		document.getElementById('btn-post').addEventListener('click', function(){
@@ -70,6 +72,10 @@
 			commentBox1.value = '';
 
 
+		})
+
+		document.getElementById('make-teal').addEventListener('click', function(){
+			document.body.style.backgroundColor = 'teal';
 		})
 	</script>
 </body>
