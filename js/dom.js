@@ -57,3 +57,54 @@ for (const section of sections){
 const placesContainer = document.getElementById('places-container');
 placesContainer.classList.add('text-center');
 placesContainer.classList.remove('large-text');
+
+//1. where to add 
+const placesList = document.getElementById('places-list');
+
+//what to be added
+const li = document.createElement('li');
+li.innerText = 'pahartoli bon';
+
+//3. add the child 
+placesList.appendChild(li);
+
+//---practice
+const li1 = document.createElement('li');
+li1.innerText = 'sagorika';
+
+placesList.appendChild(li1);
+
+//section added
+const cricketerList = document.getElementById('main-container');
+
+const section = document.createElement('section');
+section.innerHTML = `
+	<h1>Bangladesh cricket team</h1>
+	<ul>
+		<li>Mashrafe</li>
+		<li>Mashrafe</li>
+		<li>Mashrafe</li>
+		<li>Mashrafe</li>
+		<li>Mashrafe</li>
+	</ul>
+`
+
+cricketerList.appendChild(section);
+
+//1. where to add
+const mainContainer = document.getElementById('main-container');
+
+const section1 = document.createElement('section');
+const h12 = document.createElement('h1');
+h12.innerText = 'My food list';
+section1.appendChild(h12);
+
+const ul = document.createElement('ul');
+
+const li2 = document.createElement('li');
+li2.innerText = 'biriyani';
+ul.appendChild(li2);
+
+section1.appendChild(ul)
+mainContainer.appendChild(section1)
+

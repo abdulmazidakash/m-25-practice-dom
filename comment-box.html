@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Post Comment Box</title>
+</head>
+<body>
+	<h1>Post Comment Box</h1>
+
+	<div id="comment-container">
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi quo maxime atque iusto architecto perferendis, debitis fuga quibusdam totam sint odio. Libero accusantium repellat at voluptates error dolorem dolorum exercitationem est rem, enim quos nesciunt consequuntur quo. Dolor, maiores in maxime laudantium ipsum tempore! Laboriosam blanditiis adipisci repellendus accusamus quis?</p>
+
+		<p>Tempora nam delectus consectetur explicabo sint pariatur inventore repellendus assumenda provident corporis expedita placeat neque eos voluptatum, molestiae iusto cumque nemo voluptates laboriosam dolorem culpa, fugit, debitis odio? Dolore delectus ducimus facere optio expedita nemo ipsa. Itaque id incidunt, consectetur deleniti modi, cupiditate unde velit quos repudiandae adipisci corrupti vel?</p>
+
+		<p>Nulla blanditiis voluptatem rerum quaerat, nesciunt, illum explicabo suscipit molestiae dolor accusamus quod. Odit maiores reprehenderit eum praesentium dicta ipsam quod animi doloremque iure ea error in rerum officia eveniet, sunt ad vero fugiat, inventore vitae harum assumenda tempore, quasi repudiandae. Explicabo asperiores at, quidem aliquid culpa itaque atque praesentium!</p>
+	</div>
+
+	<div>
+		<textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+		<br>
+		<button id="btn-post">Post</button>
+	</div>
+
+	<h2>Add second comment box</h2>
+	<div id="comment-container1">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam officiis porro voluptatum necessitatibus error architecto! Dolorum obcaecati non aliquid repudiandae mollitia aliquam cupiditate in doloribus beatae laborum esse, deserunt, ex consequatur! Quidem omnis sed, ipsa aperiam tempora, ut rem perferendis vitae blanditiis iusto cum quod provident. Beatae consectetur possimus veniam!</p>
+		<p>Incidunt fugit nesciunt repudiandae assumenda aut quae animi optio, nihil molestias eveniet corporis soluta fugiat, nam, perspiciatis dolorum suscipit! Dolor alias consequuntur ex deleniti unde, ratione illum, sint quo quia distinctio aliquam iure maxime vero autem quidem eveniet nulla. Similique perferendis hic officiis cumque ut est culpa amet ipsa. Nam?</p>
+		<p>Blanditiis repellat asperiores atque consequatur obcaecati! Voluptates quibusdam eum harum error natus, reprehenderit soluta voluptatibus unde. Id assumenda magni, facere maxime at ipsa ut aliquid pariatur earum odio nam, doloremque rem itaque, quas excepturi quos. Tempora optio sint consequatur dolores beatae, eveniet porro nisi impedit id aliquid laborum libero quaerat!</p>
+	</div>
+
+	<div>
+		<textarea name="" id="new-comment1" cols="60" rows="5"></textarea>
+		<br>
+		<button id="btn-post1" style="background-color: teal; padding: 10px; color: white; font-size: 18px; margin-top: 10px; border-radius: 10px;">Comment Post</button>
+	</div>
+
+	<script>
+		//step -1:
+		document.getElementById('btn-post').addEventListener('click', function(){
+			
+			const commentBox = document.getElementById('new-comment');
+			// console.log(commentBox);
+			const newcomment = commentBox.value;
+			console.log(newcomment);
+
+			const commentContainer = document.getElementById('comment-container');
+			const p = document.createElement('p');
+			p.innerText = newcomment;
+
+			commentContainer.appendChild(p);
+			commentBox.value = '';
+		});
+
+
+		//add comment second time
+		document.getElementById('btn-post1').addEventListener('click', function(){
+			// console.log('add comment post clicked');
+
+			const commentBox1 = document.getElementById('new-comment1');
+			// console.log(commentBox1);
+			const newcomment1 = commentBox1.value;
+			// console.log(newcomment1);
+
+			const commentContainer1 = document.getElementById('comment-container1');
+			const p = document.createElement('p');
+			p.innerText = newcomment1;
+			commentContainer1.appendChild(p);
+
+			commentBox1.value = '';
+
+
+		})
+	</script>
+</body>
+</html>
