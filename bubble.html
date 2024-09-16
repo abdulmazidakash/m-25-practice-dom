@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event bubble</title>
+</head>
+<body id="body-container">
+	<h1>My event bubble</h1>
+	<section id="section-container">
+		<ul id="li-container">
+			<li id="list-item-1">Lorem, ipsum.</li>
+			<li id="list-item-2">Nihil, quos.</li>
+			<li id="list-item-3">Aut, ducimus?</li>
+			<li id="list-item-4">Maxime, aut!</li>
+			<li id="list-item-5">Deleniti, commodi.</li>
+			<li id="list-item-6">Esse, vel.</li>
+		</ul>
+	</section>
+
+
+	<h1>Add comment listener</h1>
+
+	<section>
+		<ul id="list-containers">
+			<li class="list">Lorem, ipsum.</li>
+			<li class="list">Quaerat, quos.</li>
+			<li class="list">Temporibus, inventore?</li>
+			<li class="list">Sunt, rerum!</li>
+			<li class="list">Est, hic.</li>
+			<li class="list">Cumque, asperiores?</li>
+		</ul>
+	</section>
+
+	<button id="btn-add-item">Add item</button>
+
+	<h2>Third add new comment</h2>
+
+	<section>
+		<ul id="third-ul-container">
+			<li class="third">Lorem, ipsum.</li>
+			<li class="third">Itaque, repellendus.</li>
+			<li class="third">Laboriosam, dignissimos?</li>
+			<li class="third">Illo, sequi!</li>
+			<li class="third">Beatae, perferendis.</li>
+			<li class="third">Magni, sequi?</li>
+		</ul>
+	</section>
+
+	<button id="btn-third">Third Practice</button>
+
+
+	<script>
+
+		document.getElementById('third-ul-container').addEventListener('click', function(events){
+			events.target.parentNode.removeChild(events.target);
+		});
+
+		document.getElementById('btn-third').addEventListener('click', function(){
+			const thirdULContainer = document.getElementById('third-ul-container');
+
+			const li = document.createElement('li');
+			li.innerText = 'third li comment';
+
+			li.classList.add('li-third');
+			thirdULContainer.appendChild(li)
+		})
+
+		// const items = document.getElementsByClassName('list');
+		// for (const item of items){
+		// 	item.addEventListener('click', function(event){
+		// 		event.target.parentNode.removeChild(event.target);
+		// 	});
+		// }
+
+		// document.getElementById('list-containers').addEventListener('click', function(event){
+		// 	event.target.parentNode.removeChild(event.target)
+		// })
+
+		// document.getElementById('btn-add-item').addEventListener('click', function(){
+		// 	const listContainer = document.getElementById('list-containers');
+
+		// 	const li = document.createElement('li');
+		// 	li.innerText = 'Brand New comment';
+		// 	li.classList.add('item');
+		// 	listContainer.appendChild(li);
+		// })
+
+
+
+
+		//
+		document.getElementById('list-item-2').addEventListener('click', function(event){
+			console.log('list item clicked');
+			event.stopImmediatePropagation();
+		});
+		document.getElementById('list-item-2').addEventListener('click', function(event){
+			console.log('list item clicked');
+
+		});
+		document.getElementById('list-item-2').addEventListener('click', function(event){
+			console.log('list item clicked');
+
+		});
+		document.getElementById('list-item-2').addEventListener('click', function(event){
+			console.log('list item clicked');
+
+		});
+
+		document.getElementById('li-container').addEventListener('click', function(){
+			console.log('ul container clicked');
+		});
+
+		document.getElementById('section-container').addEventListener('click', function(){
+			console.log('section container clicked');
+		});
+
+		document.getElementById('body-container').addEventListener('click', function(){
+			console.log('body container clicked');
+		})
+
+	</script>
+</body>
+</html>
