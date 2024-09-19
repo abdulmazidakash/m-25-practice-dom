@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Add your comment </h1>
+	<div id="comment-container">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, reiciendis eum? Vitae, voluptatum autem. Dolor voluptates sit iste laboriosam? Esse repellat, harum illo fugit consectetur dignissimos qui tenetur quisquam corrupti. Ullam est laboriosam eaque cum, explicabo, nobis quasi itaque sed neque voluptatum, minima a illum? Soluta ipsam voluptatem nemo accusamus?</p>
+		<p>Iusto nobis eum in impedit necessitatibus excepturi aspernatur quam blanditiis, amet maxime. Deserunt voluptates fugiat maxime quo ut, corporis modi. Soluta omnis ullam vero mollitia voluptatibus excepturi exercitationem fuga itaque, quisquam corrupti delectus commodi ratione maxime magni nemo eum quaerat dignissimos illum expedita? Accusamus non architecto necessitatibus, magnam quasi velit!</p>
+		<p>Possimus voluptate, dolorum esse quis corporis voluptas eaque provident sapiente laudantium deleniti commodi vitae, iste ullam earum aliquid unde natus. Atque illum, vitae laborum illo voluptas saepe dolorum minima nisi obcaecati officia, praesentium esse nostrum deleniti ab laudantium, architecto eum. Omnis, possimus similique? Quis id recusandae iusto non, architecto dignissimos!</p>
+	</div>
+	<textarea name="" id="text-area" cols="30" rows="10"></textarea>
+	<br>
+	<button id="btn-post">Post </button>
+
+
+	<script>
+		document.getElementById('btn-post').addEventListener('click', function(){
+			// console.log('clicked');
+
+			const commentBox = document.getElementById('text-area').value;
+			// console.log(commentBox);
+
+			const commentContainer = document.getElementById('comment-container');
+			// console.log(commentContainer);
+			const p = document.createElement('p');
+			p.innerText = commentBox;
+			commentContainer.appendChild(p);
+
+			document.getElementById('text-area').value = '';
+
+		})
+	</script>
+</body>
+</html>

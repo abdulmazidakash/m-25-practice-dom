@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event bubble</title>
+</head>
+<body id="body">
+	<h1>Exploring event bubble</h1>
+	<section id="list-container">
+		<ul id="list-ul">
+			<li id="item-1">Lorem, ipsum.</li>
+			<li id="item-2">Ducimus, aliquam.</li>
+			<li id="item-3">Repudiandae, minus.</li>
+			<li id="item-4">Placeat, error.</li>
+			<li id="item-5">Aut, atque.</li>
+			<li id="item-6">Omnis, odit?</li>
+		</ul>
+	</section>
+
+
+	<h1>Exploring event delegate</h1>
+	<section>
+		<ul id="item-container">
+			<li class="item">Lorem, ipsum.</li>
+			<li class="item">Impedit, quis.</li>
+			<li class="item">Quo, veritatis.</li>
+			<li class="item">Doloremque, voluptatibus!</li>
+			<li class="item">Reiciendis, ipsum?</li>
+			<li class="item">Quibusdam, pariatur.</li>
+		</ul>
+
+		<button id="btn-add-item">Add Item</button>
+	</section>
+
+
+	<h1>Explore dom events</h1>
+
+	<button onclick="makeGreen()">Make Green</button>
+
+	<button id="make-yellow">Make Yellow</button>
+
+	<input type="text" name="" id="user-email">
+
+	<h1>Add new comment</h1>
+
+	<div id="post-container">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim vero perferendis eum eos sit facilis officia! Cum quaerat provident quasi, ut possimus molestiae. Architecto necessitatibus esse fugiat accusantium dicta quasi blanditiis facilis eligendi voluptate consequuntur doloremque, ab rerum. Quidem voluptatum voluptates consequuntur tenetur impedit tempore autem alias maiores. Modi, temporibus?</p>
+		<p>Laborum blanditiis in ipsa. Dolores nesciunt quasi eveniet veniam, rem molestiae sunt ad consequatur consequuntur fugiat vel id voluptatibus veritatis placeat, eum ut, asperiores reprehenderit hic quia assumenda dolorem eos quae architecto autem. Nesciunt dolores labore officia tempora ipsum! Beatae repellendus nam dolores cupiditate autem maiores non ratione, ad recusandae.</p>
+		<p>Amet culpa illum iure nihil maiores incidunt, corporis laboriosam mollitia, inventore ea porro necessitatibus aperiam dolorem accusantium ducimus ipsam consectetur non perferendis corrupti voluptates dolor temporibus maxime quidem. Magni nulla explicabo accusamus iure ratione repudiandae vero, repellendus sint cupiditate beatae qui veniam voluptates, accusantium mollitia quas, molestiae sequi recusandae dolore.</p>
+	</div>
+
+	<div>
+		<textarea name="
+		" id="new-comment" cols="60" rows="5"></textarea>
+
+		<br>
+
+		<button id="btn-post">Post button</button>
+	</div>
+
+	<script>
+
+
+
+
+		document.getElementById('btn-post').addEventListener('click', function(){
+			// console.log('button clicked');
+
+			const commentBox = document.getElementById('new-comment');
+			// console.log(commentBox);
+			const newComment = commentBox.value;
+			// console.log(newComment);
+
+			const postContainer = document.getElementById('post-container');
+			// console.log(postContainer);
+			const p = document.createElement('p');
+			p.innerText = newComment;
+
+			postContainer.appendChild(p);
+
+			commentBox.value = '';
+		});
+		//add new commetn code up
+
+		document.getElementById('user-email').addEventListener('keyup', function(event){
+			console.log(event.target.value);
+		});
+
+		document.getElementById('make-yellow').addEventListener('click', function(){
+			document.body.style.backgroundColor = 'yellow';
+		});
+
+		function makeGreen(){
+			document.body.style.backgroundColor = 'green';
+		}
+
+		document.getElementById('item-container').addEventListener('click', function(event){
+			// console.log(event);
+			event.target.parentNode.removeChild(event.target);
+		});
+
+		document.getElementById('btn-add-item').addEventListener('click', function(){
+			const listContainer = document.getElementById('item-container');
+
+
+			const li = document.createElement('li');
+			li.innerText = 'brand new item added';
+
+			li.classList.add('item');
+			listContainer.appendChild(li);
+		});
+
+		const items = document.getElementsByClassName('item');
+		for (const item of items){
+			// console.log(item);
+			item.addEventListener('click', function(event){
+				event.target.parentNode.removeChild(event.target)
+			})
+		}
+
+
+
+		document.getElementById('item-2').addEventListener('click', function(event){
+			// console.log('item 2 clicked');
+			event.stopPropagation();
+		});
+
+		document.getElementById('list-ul').addEventListener('click', function(){
+			console.log('list ul clicked');
+		});
+
+		document.getElementById('list-container').addEventListener('click', function(){
+			console.log('list container clicked');
+		});
+
+		document.getElementById('body').addEventListener('click', function(event){
+			// console.log('body of the html clicked');
+			event.stopPropagation();
+		})
+	</script>
+</body>
+</html>
